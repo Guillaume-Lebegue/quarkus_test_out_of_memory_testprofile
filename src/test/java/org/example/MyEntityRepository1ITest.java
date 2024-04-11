@@ -5,6 +5,7 @@ import io.quarkus.test.junit.TestProfile;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import org.example.profiles.DefaultProfile1;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -17,6 +18,12 @@ class MyEntityRepository1ITest {
 
     @Inject
     MyEntityRepository myEntityRepository;
+
+    @BeforeEach
+    @Transactional
+    void setUp() {
+        myEntityRepository.deleteAll();
+    }
 
     @Test
     @Transactional
