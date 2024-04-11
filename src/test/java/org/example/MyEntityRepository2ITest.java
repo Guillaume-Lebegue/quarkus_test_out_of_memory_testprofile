@@ -4,7 +4,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.junit.TestProfile;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
-import org.example.profiles.DefaultProfile2;
+import org.example.profiles.DefaultProfile1;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @QuarkusTest
-@TestProfile(DefaultProfile2.class)
+@TestProfile(DefaultProfile1.class)
 class MyEntityRepository2ITest {
 
     @Inject
